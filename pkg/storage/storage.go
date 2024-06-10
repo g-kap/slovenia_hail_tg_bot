@@ -62,7 +62,7 @@ func (s *SqliteStorage) GetChatsForRegion(ctx context.Context, region string) ([
 	var result []int64
 	for rows.Next() {
 		var chatID int64
-		err := rows.Scan(&region)
+		err := rows.Scan(&chatID)
 		if err != nil {
 			return nil, err
 		}
